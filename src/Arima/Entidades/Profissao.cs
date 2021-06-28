@@ -25,7 +25,7 @@ namespace Arima
             DataTermino = dataTermino;
             Empresa = empresa;
         }
-        public List<Funcao> Funcoes { get; private set}
+        public List<Funcao> Funcoes { get; private set; }
         public string Descricao { get; }
         public DateTime DataInicio { get; }
         public DateTime? DataTermino { get; }

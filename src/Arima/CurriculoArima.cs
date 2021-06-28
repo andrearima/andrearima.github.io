@@ -17,6 +17,9 @@ namespace Arima
         public Contato Contato { get; }
         public string NomePai { get; }
         public string NomeMae { get; }
+        public string NomeProfissao { get; }
+        public string Endereco { get; }
+        public string Pais { get; }
         public List<string> Filhos { get; }
         public Formacao Formacao { get; }
         public List<Curso> Cursos { get; private set; }
@@ -28,6 +31,9 @@ namespace Arima
             Nome = "André";
             NomeMeio = "Hiromi";
             SobreNome = "Arima";
+            Endereco = "Goiânia - Go";
+            Pais = "Brasil";
+            NomeProfissao = "Analista de Sistemas";
             Descricao = "Analista Desenvolvedor, apaixonado pela Música e pela Família";
             Formacao = new("Analista de Sistemas (Sistemas de Informação)",
                 "Bacharel", "Universidade Salgado de Oliveira", "2º Semestre de 2011",
@@ -36,7 +42,8 @@ namespace Arima
             NomePai = "Massahiro Arima";
             NomeMae = "Marta T.K. Arima";
             Filhos = new List<string> { "Elis Saori Cirrara Arima" };
-            Contato = new Contato("andre.hiromi.arima@gmail.com", "(62)98220-2555", "(62)98220-2555", "https://www.linkedin.com/in/andrehiromiarima/");
+            Contato = new Contato("andre.hiromi.arima@gmail.com", "(62)98220-2555", "(62)98220-2555", 
+                "https://www.linkedin.com/in/andrehiromiarima/", "https://www.instagram.com/andrearima/", "https://twitter.com/andrearima1", "https://github.com/andrearima");
 
             SetEmpresas();
             SetHistoricoProfissional();
