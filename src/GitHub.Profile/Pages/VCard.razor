@@ -1,0 +1,72 @@
+﻿@page "/VCard"
+
+<div class="card offset-xl-2 offset-lg-2 offset-md-1 offset-sm-0
+                    col-xl-8 col-lg-8 col-md-9 col-sm-12">
+
+    <div class="card-header row justify-content-center" style="padding:50px">
+
+        <div class="card-img col-xl-2 col-lg-3 col-md-4 col-sm-12 align-content-center">
+            <img src="/img/profile.png" class="rounded-pill float-left" width="150" />
+        </div>
+
+        <div class="col-xl-8 col-lg-9 col-md-8 col-sm-12 justify-content-center">
+            <h2>@InformacoesPessoais.Info.NomeSobrenome</h2>
+            <h4><i>@InformacoesPessoais.Info.NomeProfissao</i></h4>
+
+            <p>@InformacoesPessoais.Info.Descricao</p>
+
+            <hr />
+            <div class="row justify-content-sm-center">
+                <a href="@InformacoesPessoais.Info.Contato.UrlInstagram" target="_blank" class="col-2"><i class="fab fa-instagram"></i></a>
+                <a href="@InformacoesPessoais.Info.Contato.UrlTwitter" target="_blank" class="col-2"><i class="fab fa-twitter"></i></a>
+                <a href="@InformacoesPessoais.Info.Contato.UrlLinkedIn" target="_blank" class="col-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="@InformacoesPessoais.Info.Contato.UrlGitHubt" target="_blank" class="col-2"><i class="fab fa-github"></i></a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card-body row" style="padding:50px">
+        <div class="col-6">
+            <p>
+                Desenvolvedor <b>.Net</b>
+            </p>
+            <p>
+                Mais de 3 anos de experiência desenvolvimento de sistemas.
+            </p>
+            <p>
+
+            </p>
+        </div>
+        <div class="col-6">
+            <ol class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold"><b>Email</b></div>
+                        @InformacoesPessoais.Info.Contato.Email
+                    </div>
+                    <span class="badge bg-primary rounded-pill"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold"><b>País</b></div>
+                        @InformacoesPessoais.Info.Pais
+                    </div>
+                    <span class="badge bg-primary rounded-pill"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold"><b>Endereço</b></div>
+                        @InformacoesPessoais.Info.Endereco
+                    </div>
+                    <span class="badge bg-primary rounded-pill"></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+</div>
+
+@code {
+
+}
