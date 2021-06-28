@@ -1,0 +1,49 @@
+name: CI - GitHubPages
+
+# Controla quando a Action irá disparar
+on:
+  # Dispara o workflow a partir de um push ou pull request somente da branch master
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Permite disparar o WorkFlow manuamente pela aba Actions
+  workflow_dispatch:
+
+# Inicio do WorkFlow, que é feito de uma ou mais jobs que rodam sequencialmente ou em paralelo
+jobs:
+  # Este workflow contem apenas uma job chamada de BUILD
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Check-out para o Repositório GitHub Pages
+        uses: actions/checkout@v2
+      
+      - name: Configura o SDK do .NET Core na versão 5.0
+        uses: actions/setup-dotnet@v1.8.0
+        with:
+          dotnet-version: 5.0.x
+          
+      - name: Publica o Projeto ArimInvest
+        run: dotnet publish src/GitHub.Profile/GitHub.Profile.csproj -c Release -o release
+          
+      # changes the base-tag in index.html from '/' to 'ArimInvest' to match GitHub Pages repository subdirectory
+      #- name: Altera a base-tag no arquivo index.html de / para ArimInvest
+        #run: sed -i 's/<base href="\/" \/>/<base href="\/ArimInvest\/" \/>/g' release/wwwroot/index.html
+      
+      
+      # add .nojekyll file to tell GitHub pages to not treat this as a Jekyll project. (Allow files and folders starting with an underscore)
+      - name: Adiciona o arquivo .nojekyll para reconhecer arquivos com _ underscore
+        run: touch release/wwwroot/.nojekyll
+        
+      - name: Commit wwwroot para GitHub Pages usando JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: release/wwwroot
