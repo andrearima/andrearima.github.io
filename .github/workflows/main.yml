@@ -4,9 +4,9 @@ name: CI - GitHubPages
 on:
   # Dispara o workflow a partir de um push ou pull request somente da branch master
   push:
-    branches: [ blazor ]
+    branches: [ master ]
   pull_request:
-    branches: [ blazor ]
+    branches: [ master ]
 
   # Permite disparar o WorkFlow manuamente pela aba Actions
   workflow_dispatch:
