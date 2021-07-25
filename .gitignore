@@ -9,3 +9,9 @@ src/.vs/
 src/Arima/bin/
 src/CSharp.Basico/obj/
 src/Principios/obj/
+src/Banchmarking/bin/
+src/Banchmarking/obj/
+src/Benchmarking.Console/bin/
+src/Benchmarking.Console/obj/
+src/Principios/bin/
+src/CSharp.Basico/bin/
