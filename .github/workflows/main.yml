@@ -27,7 +27,7 @@ jobs:
       - name: Configura o SDK do .NET Core na versão 5.0
         uses: actions/setup-dotnet@v1.8.0
         with:
-          dotnet-version: 5.0.x
+          dotnet-version: 6.0.x
           
       - name: Publica o Projeto ArimInvest
         run: dotnet publish src/GitHub.Profile/GitHub.Profile.csproj -c Release -o release
